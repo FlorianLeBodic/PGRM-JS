@@ -55,23 +55,30 @@ function abracadabra() {
 abracadabra();
 */
 
+/*
 let poids = prompt("Quel est votre poids en kg ? Exemple 68,4")
-let taille = prompt("Quel est votre taille en mètres ? Exemple 1,75");
+let taille = prompt("Quel est votre taille en centimètre ? Exemple 175");
 
 // Pour que le calcul prenne en compte des , pour les décimaux à la place des . on peut faire : 
 // let var = var.replace(",", ".")); => Permet de pouvoir convertir une string du prompt avec des décimaux notés 1.5 ou 1,5 :D
 
+// Cette fonction peut avoir 2 fois moins de lignes mais par soucis de clarté on laisse comme ça 
 function caculerIMC(poids, taille) {
 
     poids = poids.replace(',', '.');
     poids = parseFloat(poids);
+
     taille = taille.replace(',', '.');
-    taille = parseFloat(taille);
+    taille = parseFloat(taille / 100);
 
-    resultat = poids / (taille ** 2);
+    resultat = poids / (Math.pow(taille, 2))
+    // resultat = poids / (taille ** 2);
 
+    resultat = resultat.toFixed(2);
     //toFixed arrondi à 2 décimals après la virgule
-    alert("Votre IMC est de " + resultat.toFixed(2) + " !");
+
+    return "Votre IMC est de " + resultat + " !";
 }
 
-caculerIMC(poids, taille);
+alert(caculerIMC(poids, taille));
+*/
